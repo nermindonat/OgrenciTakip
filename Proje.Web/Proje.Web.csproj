@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="DevamsizlikBilgisi.aspx" />
     <Content Include="Myproject\.idea\.gitignore" />
     <Content Include="Myproject\.idea\modules.xml" />
     <Content Include="Myproject\.idea\workspace.xml" />
@@ -163,6 +164,9 @@
     <Content Include="Myproject\not-girisi.html" />
     <Content Include="Myproject\ogrenci-bilgileri.html" />
     <Content Include="Myproject\okul-bilgileri.html" />
+    <Content Include="NotGirisi.aspx" />
+    <Content Include="OgrenciBilgileri.aspx" />
+    <Content Include="OkulBilgisi.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +176,41 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DevamsizlikBilgisi.aspx.cs">
+      <DependentUpon>DevamsizlikBilgisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevamsizlikBilgisi.aspx.designer.cs">
+      <DependentUpon>DevamsizlikBilgisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotGirisi.aspx.cs">
+      <DependentUpon>NotGirisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotGirisi.aspx.designer.cs">
+      <DependentUpon>NotGirisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciBilgileri.aspx.cs">
+      <DependentUpon>OgrenciBilgileri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OgrenciBilgileri.aspx.designer.cs">
+      <DependentUpon>OgrenciBilgileri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OkulBilgisi.aspx.cs">
+      <DependentUpon>OkulBilgisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OkulBilgisi.aspx.designer.cs">
+      <DependentUpon>OkulBilgisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page.Master.cs">
+      <DependentUpon>Page.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page.Master.designer.cs">
+      <DependentUpon>Page.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -184,6 +223,7 @@
     <Content Include="Myproject\assets\icon\themify-icons\fonts\themify.ttf" />
     <Content Include="Myproject\assets\icon\themify-icons\fonts\themify.woff" />
     <None Include="packages.config" />
+    <Content Include="Page.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
