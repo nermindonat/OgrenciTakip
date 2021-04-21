@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b498b51e5ba4d51b41ccfbd2f9e6757" Name="Diagram1">
+        <EntityTypeShape EntityType="OgrenciTakipModel.Branslar" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Kullanicilar" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.KullaniciTurleri" Width="1.5" PointX="4.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Notlar" Width="1.5" PointX="0.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.OgrBilgi" Width="1.5" PointX="4.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Ogretmenler" Width="1.5" PointX="8.875" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.OgretmenSinif" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.OkulBilgi" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Siniflar" Width="1.5" PointX="9.125" PointY="3.625" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

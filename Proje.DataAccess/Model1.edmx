@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OgrenciTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.Branslar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Branslar">
+          <Key>
+            <PropertyRef Name="BransId" />
+          </Key>
+          <Property Name="BransId" Type="int" Nullable="false" />
+          <Property Name="BransAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.Kullanicilar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="KulId" />
+            <PropertyRef Name="FkKulTurId" />
+            <PropertyRef Name="FkOgrId" />
+            <PropertyRef Name="FkSinifId" />
+          </Key>
+          <Property Name="KulId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FkKulTurId" Type="int" Nullable="false" />
+          <Property Name="FkOgrId" Type="int" Nullable="false" />
+          <Property Name="FkSinifId" Type="int" Nullable="false" />
+          <Property Name="KulAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="KulSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fotograf" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.KullaniciTurleri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="KullaniciTurleri">
+          <Key>
+            <PropertyRef Name="KulTurId" />
+          </Key>
+          <Property Name="KulTurId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KulTurAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.Notlar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Notlar">
+          <Key>
+            <PropertyRef Name="NotId" />
+            <PropertyRef Name="Sinav1" />
+            <PropertyRef Name="Sinav2" />
+            <PropertyRef Name="Performans" />
+            <PropertyRef Name="Proje" />
+          </Key>
+          <Property Name="NotId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sinav1" Type="int" Nullable="false" />
+          <Property Name="Sinav2" Type="int" Nullable="false" />
+          <Property Name="Performans" Type="int" Nullable="false" />
+          <Property Name="Proje" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.OgrBilgi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OgrBilgi">
+          <Key>
+            <PropertyRef Name="OgrBilgiId" />
+            <PropertyRef Name="FkSinifId" />
+          </Key>
+          <Property Name="OgrBilgiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FkSinifId" Type="int" Nullable="false" />
+          <Property Name="OgrAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgrSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgrNo" Type="int" />
+          <Property Name="DevamsizlikTarih" Type="datetime" />
+          <Property Name="DevamsizlikTur" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.Ogretmenler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Ogretmenler">
+          <Key>
+            <PropertyRef Name="OgretmenId" />
+            <PropertyRef Name="FkBransId" />
+          </Key>
+          <Property Name="OgretmenId" Type="int" Nullable="false" />
+          <Property Name="FkBransId" Type="int" Nullable="false" />
+          <Property Name="OgretmenAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgretmenSoyad" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.OgretmenSinif' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OgretmenSinif">
+          <Key>
+            <PropertyRef Name="OgrSinifId" />
+            <PropertyRef Name="FkOgretmenId" />
+            <PropertyRef Name="FkSinifId" />
+          </Key>
+          <Property Name="OgrSinifId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FkOgretmenId" Type="int" Nullable="false" />
+          <Property Name="FkSinifId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.OkulBilgi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OkulBilgi">
+          <Key>
+            <PropertyRef Name="OkulId" />
+          </Key>
+          <Property Name="OkulId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OkulAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adres" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'OgrenciTakip.dbo.Siniflar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Siniflar">
+          <Key>
+            <PropertyRef Name="SinifId" />
+          </Key>
+          <Property Name="SinifId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sube" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="OgrenciTakipModelStoreContainer">
+          <EntitySet Name="Branslar" EntityType="Self.Branslar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Branslar].[BransId] AS [BransId], 
+    [Branslar].[BransAd] AS [BransAd]
+    FROM [dbo].[Branslar] AS [Branslar]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Kullanicilar].[KulId] AS [KulId], 
+    [Kullanicilar].[FkKulTurId] AS [FkKulTurId], 
+    [Kullanicilar].[FkOgrId] AS [FkOgrId], 
+    [Kullanicilar].[FkSinifId] AS [FkSinifId], 
+    [Kullanicilar].[KulAd] AS [KulAd], 
+    [Kullanicilar].[KulSoyad] AS [KulSoyad], 
+    [Kullanicilar].[Email] AS [Email], 
+    [Kullanicilar].[Sifre] AS [Sifre], 
+    [Kullanicilar].[Fotograf] AS [Fotograf]
+    FROM [dbo].[Kullanicilar] AS [Kullanicilar]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="KullaniciTurleri" EntityType="Self.KullaniciTurleri" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [KullaniciTurleri].[KulTurId] AS [KulTurId], 
+    [KullaniciTurleri].[KulTurAd] AS [KulTurAd]
+    FROM [dbo].[KullaniciTurleri] AS [KullaniciTurleri]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Notlar" EntityType="Self.Notlar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Notlar].[NotId] AS [NotId], 
+    [Notlar].[Sinav1] AS [Sinav1], 
+    [Notlar].[Sinav2] AS [Sinav2], 
+    [Notlar].[Performans] AS [Performans], 
+    [Notlar].[Proje] AS [Proje]
+    FROM [dbo].[Notlar] AS [Notlar]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OgrBilgi" EntityType="Self.OgrBilgi" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OgrBilgi].[OgrBilgiId] AS [OgrBilgiId], 
+    [OgrBilgi].[FkSinifId] AS [FkSinifId], 
+    [OgrBilgi].[OgrAd] AS [OgrAd], 
+    [OgrBilgi].[OgrSoyad] AS [OgrSoyad], 
+    [OgrBilgi].[OgrNo] AS [OgrNo], 
+    [OgrBilgi].[DevamsizlikTarih] AS [DevamsizlikTarih], 
+    [OgrBilgi].[DevamsizlikTur] AS [DevamsizlikTur]
+    FROM [dbo].[OgrBilgi] AS [OgrBilgi]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Ogretmenler" EntityType="Self.Ogretmenler" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Ogretmenler].[OgretmenId] AS [OgretmenId], 
+    [Ogretmenler].[FkBransId] AS [FkBransId], 
+    [Ogretmenler].[OgretmenAd] AS [OgretmenAd], 
+    [Ogretmenler].[OgretmenSoyad] AS [OgretmenSoyad]
+    FROM [dbo].[Ogretmenler] AS [Ogretmenler]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OgretmenSinif" EntityType="Self.OgretmenSinif" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OgretmenSinif].[OgrSinifId] AS [OgrSinifId], 
+    [OgretmenSinif].[FkOgretmenId] AS [FkOgretmenId], 
+    [OgretmenSinif].[FkSinifId] AS [FkSinifId]
+    FROM [dbo].[OgretmenSinif] AS [OgretmenSinif]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OkulBilgi" EntityType="Self.OkulBilgi" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OkulBilgi].[OkulId] AS [OkulId], 
+    [OkulBilgi].[OkulAd] AS [OkulAd], 
+    [OkulBilgi].[Adres] AS [Adres]
+    FROM [dbo].[OkulBilgi] AS [OkulBilgi]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Siniflar" EntityType="Self.Siniflar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Siniflar].[SinifId] AS [SinifId], 
+    [Siniflar].[Sube] AS [Sube]
+    FROM [dbo].[Siniflar] AS [Siniflar]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OgrenciTakipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Branslar">
+          <Key>
+            <PropertyRef Name="BransId" />
+          </Key>
+          <Property Name="BransId" Type="Int32" Nullable="false" />
+          <Property Name="BransAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="KulId" />
+            <PropertyRef Name="FkKulTurId" />
+            <PropertyRef Name="FkOgrId" />
+            <PropertyRef Name="FkSinifId" />
+          </Key>
+          <Property Name="KulId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FkKulTurId" Type="Int32" Nullable="false" />
+          <Property Name="FkOgrId" Type="Int32" Nullable="false" />
+          <Property Name="FkSinifId" Type="Int32" Nullable="false" />
+          <Property Name="KulAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KulSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fotograf" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="KullaniciTurleri">
+          <Key>
+            <PropertyRef Name="KulTurId" />
+          </Key>
+          <Property Name="KulTurId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KulTurAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Notlar">
+          <Key>
+            <PropertyRef Name="NotId" />
+            <PropertyRef Name="Sinav1" />
+            <PropertyRef Name="Sinav2" />
+            <PropertyRef Name="Performans" />
+            <PropertyRef Name="Proje" />
+          </Key>
+          <Property Name="NotId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sinav1" Type="Int32" Nullable="false" />
+          <Property Name="Sinav2" Type="Int32" Nullable="false" />
+          <Property Name="Performans" Type="Int32" Nullable="false" />
+          <Property Name="Proje" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OgrBilgi">
+          <Key>
+            <PropertyRef Name="OgrBilgiId" />
+            <PropertyRef Name="FkSinifId" />
+          </Key>
+          <Property Name="OgrBilgiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FkSinifId" Type="Int32" Nullable="false" />
+          <Property Name="OgrAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgrSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgrNo" Type="Int32" />
+          <Property Name="DevamsizlikTarih" Type="DateTime" Precision="3" />
+          <Property Name="DevamsizlikTur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ogretmenler">
+          <Key>
+            <PropertyRef Name="OgretmenId" />
+            <PropertyRef Name="FkBransId" />
+          </Key>
+          <Property Name="OgretmenId" Type="Int32" Nullable="false" />
+          <Property Name="FkBransId" Type="Int32" Nullable="false" />
+          <Property Name="OgretmenAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgretmenSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OgretmenSinif">
+          <Key>
+            <PropertyRef Name="OgrSinifId" />
+            <PropertyRef Name="FkOgretmenId" />
+            <PropertyRef Name="FkSinifId" />
+          </Key>
+          <Property Name="OgrSinifId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FkOgretmenId" Type="Int32" Nullable="false" />
+          <Property Name="FkSinifId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OkulBilgi">
+          <Key>
+            <PropertyRef Name="OkulId" />
+          </Key>
+          <Property Name="OkulId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OkulAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Siniflar">
+          <Key>
+            <PropertyRef Name="SinifId" />
+          </Key>
+          <Property Name="SinifId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sube" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="OgrenciTakipEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Branslar" EntityType="Self.Branslar" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+          <EntitySet Name="KullaniciTurleri" EntityType="Self.KullaniciTurleri" />
+          <EntitySet Name="Notlar" EntityType="Self.Notlar" />
+          <EntitySet Name="OgrBilgi" EntityType="Self.OgrBilgi" />
+          <EntitySet Name="Ogretmenler" EntityType="Self.Ogretmenler" />
+          <EntitySet Name="OgretmenSinif" EntityType="Self.OgretmenSinif" />
+          <EntitySet Name="OkulBilgi" EntityType="Self.OkulBilgi" />
+          <EntitySet Name="Siniflar" EntityType="Self.Siniflar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OgrenciTakipModelStoreContainer" CdmEntityContainer="OgrenciTakipEntities">
+          <EntitySetMapping Name="Branslar">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.Branslar">
+              <MappingFragment StoreEntitySet="Branslar">
+                <ScalarProperty Name="BransId" ColumnName="BransId" />
+                <ScalarProperty Name="BransAd" ColumnName="BransAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanicilar">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.Kullanicilar">
+              <MappingFragment StoreEntitySet="Kullanicilar">
+                <ScalarProperty Name="KulId" ColumnName="KulId" />
+                <ScalarProperty Name="FkKulTurId" ColumnName="FkKulTurId" />
+                <ScalarProperty Name="FkOgrId" ColumnName="FkOgrId" />
+                <ScalarProperty Name="FkSinifId" ColumnName="FkSinifId" />
+                <ScalarProperty Name="KulAd" ColumnName="KulAd" />
+                <ScalarProperty Name="KulSoyad" ColumnName="KulSoyad" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KullaniciTurleri">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.KullaniciTurleri">
+              <MappingFragment StoreEntitySet="KullaniciTurleri">
+                <ScalarProperty Name="KulTurId" ColumnName="KulTurId" />
+                <ScalarProperty Name="KulTurAd" ColumnName="KulTurAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notlar">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.Notlar">
+              <MappingFragment StoreEntitySet="Notlar">
+                <ScalarProperty Name="NotId" ColumnName="NotId" />
+                <ScalarProperty Name="Sinav1" ColumnName="Sinav1" />
+                <ScalarProperty Name="Sinav2" ColumnName="Sinav2" />
+                <ScalarProperty Name="Performans" ColumnName="Performans" />
+                <ScalarProperty Name="Proje" ColumnName="Proje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OgrBilgi">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.OgrBilgi">
+              <MappingFragment StoreEntitySet="OgrBilgi">
+                <ScalarProperty Name="OgrBilgiId" ColumnName="OgrBilgiId" />
+                <ScalarProperty Name="FkSinifId" ColumnName="FkSinifId" />
+                <ScalarProperty Name="OgrAd" ColumnName="OgrAd" />
+                <ScalarProperty Name="OgrSoyad" ColumnName="OgrSoyad" />
+                <ScalarProperty Name="OgrNo" ColumnName="OgrNo" />
+                <ScalarProperty Name="DevamsizlikTarih" ColumnName="DevamsizlikTarih" />
+                <ScalarProperty Name="DevamsizlikTur" ColumnName="DevamsizlikTur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ogretmenler">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.Ogretmenler">
+              <MappingFragment StoreEntitySet="Ogretmenler">
+                <ScalarProperty Name="OgretmenId" ColumnName="OgretmenId" />
+                <ScalarProperty Name="FkBransId" ColumnName="FkBransId" />
+                <ScalarProperty Name="OgretmenAd" ColumnName="OgretmenAd" />
+                <ScalarProperty Name="OgretmenSoyad" ColumnName="OgretmenSoyad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OgretmenSinif">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.OgretmenSinif">
+              <MappingFragment StoreEntitySet="OgretmenSinif">
+                <ScalarProperty Name="OgrSinifId" ColumnName="OgrSinifId" />
+                <ScalarProperty Name="FkOgretmenId" ColumnName="FkOgretmenId" />
+                <ScalarProperty Name="FkSinifId" ColumnName="FkSinifId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OkulBilgi">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.OkulBilgi">
+              <MappingFragment StoreEntitySet="OkulBilgi">
+                <ScalarProperty Name="OkulId" ColumnName="OkulId" />
+                <ScalarProperty Name="OkulAd" ColumnName="OkulAd" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Siniflar">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.Siniflar">
+              <MappingFragment StoreEntitySet="Siniflar">
+                <ScalarProperty Name="SinifId" ColumnName="SinifId" />
+                <ScalarProperty Name="Sube" ColumnName="Sube" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
