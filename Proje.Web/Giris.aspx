@@ -66,7 +66,7 @@
                             <div class="auth-box">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
-                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                        <h3 class="text-left txt-primary">Kullanıcı Girişi</h3>
                                     </div>
                                 </div>
                                 <hr/>
@@ -84,17 +84,17 @@
                                             <label>
                                                 <input type="checkbox" value="">
                                                 <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Remember me</span>
+                                                <span class="text-inverse">Beni hatırla</span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Forgot Your Password?</a>
+                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Şifrenizi mi unuttunuz?</a>
                                     </div>
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                        <a href="Default.aspx" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Giriş yap</a>
                                     </div>
                                 </div>
                                 <hr/>
