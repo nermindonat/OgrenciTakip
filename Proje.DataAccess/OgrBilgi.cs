@@ -21,5 +21,7 @@ namespace Proje.DataAccess
         public Nullable<int> OgrNo { get; set; }
         public Nullable<System.DateTime> DevamsizlikTarih { get; set; }
         public string DevamsizlikTur { get; set; }
+
+    
     }
 }

@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Proje.Web
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Giris1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Listele();
-        }
 
-        private void Listele()
-        {
-            
         }
     }
 }
