@@ -193,16 +193,20 @@
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">İşlemler</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
+                                    <asp:Repeater ID="rptMenuler" runat="server">
+                                        <ItemTemplate>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
                                             <a href="accordion.html">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Accordion</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert"><%# Eval("MenuAd") %></span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
 
                                     </ul>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
                                 </li>
                             </ul>
 
