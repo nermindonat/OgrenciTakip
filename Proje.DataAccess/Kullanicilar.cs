@@ -15,6 +15,12 @@ namespace Proje.DataAccess
     public partial class Kullanicilar
     {
         public int KulId { get; set; }
+
+        public object KullanicilariListele<T>()
+        {
+            throw new NotImplementedException();
+        }
+
         public int FkKulTurId { get; set; }
         public int FkOgrId { get; set; }
         public int FkSinifId { get; set; }
@@ -23,5 +29,9 @@ namespace Proje.DataAccess
         public string Email { get; set; }
         public string Sifre { get; set; }
         public string Fotograf { get; set; }
+        public int Yetki { get; set; }
+    
+        public virtual KullaniciTurleri KullaniciTurleri { get; set; }
+        public virtual Siniflar Siniflar { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proje.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,22 +11,20 @@ namespace Proje.Web
 {
     public partial class Default : System.Web.UI.Page
     {
+        Business.Menuler menuler = new Business.Menuler();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection baglanti = new SqlConnection("Data Source=DESKTOP-NJ1RRJV/MSSQLSERVER01;Initial Catalog=OgrenciTakip;Integrated Security=True");
-            SqlCommand komut = new SqlCommand("SELECT * FROM Menuler", baglanti);
-            baglanti.Open();
-            SqlDataReader reader = komut.ExecuteReader();
-
-
-            rptMenuler.DataSource = rptMenuler;
-            rptMenuler.DataBind();
-            //Listele();
+            MenuleriListele();
         }
 
-        private void Listele()
+        private void MenuleriListele()
         {
-            
+            var liste = menuler.MenuleriListele();
+            rptMenuler.DataSource = liste;
+            rptMenuler.DataBind();
         }
+
+       
     }
 }

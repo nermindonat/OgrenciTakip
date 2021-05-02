@@ -14,7 +14,16 @@ namespace Proje.DataAccess
     
     public partial class KullaniciTurleri
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KullaniciTurleri()
+        {
+            this.Kullanicilar = new HashSet<Kullanicilar>();
+        }
+    
         public int KulTurId { get; set; }
         public string KulTurAd { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Kullanicilar> Kullanicilar { get; set; }
     }
 }

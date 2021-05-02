@@ -90,10 +90,10 @@
                                         </div>
                                     </div>
                                     <hr />
-                                    <a href="Giris.aspx" class="btn btn-primary btn-md btn-block waves-effect text-center">Müdür Girişi</a>
-                                    <a href="Giris.aspx" class="btn btn-primary btn-md btn-block waves-effect text-center ">Müdür Yardımcısı Girişi</a>
-                                    <a href="Giris.aspx" class="btn btn-primary btn-md btn-block waves-effect text-center ">Öğretmen Girişi</a>
-                                    <a href="Giris.aspx" class="btn btn-primary btn-md btn-block waves-effect text-center ">Rehber Öğretmen Girişi</a>
+                                    <a href="Giris.aspx?kullaniciTurId=1" class="btn btn-primary btn-md btn-block waves-effect text-center">Müdür Girişi</a>
+                                    <a href="Giris.aspx?kullaniciTurId=2" class="btn btn-primary btn-md btn-block waves-effect text-center ">Müdür Yardımcısı Girişi</a>
+                                    <a href="Giris.aspx?kullaniciTurId=3" class="btn btn-primary btn-md btn-block waves-effect text-center ">Öğretmen Girişi</a>
+                                    <a href="Giris.aspx?kullaniciTurId=4" class="btn btn-primary btn-md btn-block waves-effect text-center ">Rehber Öğretmen Girişi</a>
                                     <hr />
                                 </div>
                             </form>

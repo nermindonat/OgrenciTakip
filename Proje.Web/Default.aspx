@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Proje.Web.Default" %>
+﻿h<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Proje.Web.Default" %>
 
 <!DOCTYPE html>
 
@@ -193,20 +193,25 @@
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">İşlemler</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                    <asp:Repeater ID="rptMenuler" runat="server">
-                                        <ItemTemplate>
+                                    
                                     <ul class="pcoded-submenu">
+                                        <asp:Repeater ID="rptMenuler" runat="server">
+                                        <ItemTemplate>
                                         <li class=" ">
-                                            <a href="accordion.html">
+                                            <a href="NotGirisi.aspx">                          
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert"><%# Eval("MenuAd") %></span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
+                                           
                                         </li>
-
-                                    </ul>
+                                            
                                             </ItemTemplate>
                                         </asp:Repeater>
+                                        
+
+                                    </ul>
+                                    
                                 </li>
                             </ul>
 

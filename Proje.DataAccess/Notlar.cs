@@ -14,10 +14,19 @@ namespace Proje.DataAccess
     
     public partial class Notlar
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Notlar()
+        {
+            this.Ogretmenler = new HashSet<Ogretmenler>();
+        }
+    
         public int NotId { get; set; }
         public int Sinav1 { get; set; }
         public int Sinav2 { get; set; }
         public int Performans { get; set; }
         public int Proje { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ogretmenler> Ogretmenler { get; set; }
     }
 }

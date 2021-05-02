@@ -71,11 +71,11 @@
                                 </div>
                                 <hr/>
                                 <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Your Email Address">
+                                    <input runat="server" id="tbxKullaniciEmail" type="email" class="form-control" placeholder="E-posta adresi" >
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input runat="server" id="tbxSifre" type="password" class="form-control" placeholder="Şifre">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
@@ -94,9 +94,10 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <a href="Default.aspx" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Giriş yap</a>
+                                        <button runat="server" id="btnGiris" type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" onserverclick="btnGiris_OnServerClick">Giriş Yap</button>
                                     </div>
                                 </div>
+                                <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
                                 <hr/>
                                
 

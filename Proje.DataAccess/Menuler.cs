@@ -12,16 +12,11 @@ namespace Proje.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class OgrBilgi
+    public partial class Menuler
     {
-        public int OgrBilgiId { get; set; }
-        public int FkSinifId { get; set; }
-        public string OgrAd { get; set; }
-        public string OgrSoyad { get; set; }
-        public Nullable<int> OgrNo { get; set; }
-        public Nullable<System.DateTime> DevamsizlikTarih { get; set; }
-        public string DevamsizlikTur { get; set; }
-    
-        public virtual Siniflar Siniflar { get; set; }
+        public int MenuId { get; set; }
+        public string MenuAd { get; set; }
+        public string MenuUrl { get; set; }
+        public Nullable<int> Yetki { get; set; }
     }
 }

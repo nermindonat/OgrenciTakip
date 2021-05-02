@@ -14,7 +14,16 @@ namespace Proje.DataAccess
     
     public partial class Branslar
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Branslar()
+        {
+            this.Ogretmenler = new HashSet<Ogretmenler>();
+        }
+    
         public int BransId { get; set; }
         public string BransAd { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ogretmenler> Ogretmenler { get; set; }
     }
 }

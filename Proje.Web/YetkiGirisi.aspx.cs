@@ -12,10 +12,6 @@ namespace Proje.Web
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnMudurGiris_ServerClick(object sender, EventArgs e)
-        {
 
         }
     }

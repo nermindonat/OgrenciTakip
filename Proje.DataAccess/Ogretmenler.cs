@@ -14,9 +14,21 @@ namespace Proje.DataAccess
     
     public partial class Ogretmenler
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Ogretmenler()
+        {
+            this.OgretmenSinif = new HashSet<OgretmenSinif>();
+        }
+    
         public int OgretmenId { get; set; }
+        public int FkNotId { get; set; }
         public int FkBransId { get; set; }
         public string OgretmenAd { get; set; }
         public string OgretmenSoyad { get; set; }
+    
+        public virtual Branslar Branslar { get; set; }
+        public virtual Notlar Notlar { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OgretmenSinif> OgretmenSinif { get; set; }
     }
 }

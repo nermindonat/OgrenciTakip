@@ -17,5 +17,8 @@ namespace Proje.DataAccess
         public int OgrSinifId { get; set; }
         public int FkOgretmenId { get; set; }
         public int FkSinifId { get; set; }
+    
+        public virtual Ogretmenler Ogretmenler { get; set; }
+        public virtual Siniflar Siniflar { get; set; }
     }
 }

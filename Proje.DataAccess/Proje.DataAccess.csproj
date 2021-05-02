@@ -60,6 +60,9 @@
     <Compile Include="KullaniciTurleri.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Menuler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,6 +81,7 @@
     <Compile Include="Notlar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="OgrBilgi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -96,32 +100,53 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="bin\Debug\Proje.DataAccess.dll.config" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Model1.csdl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Model1.msl" />
+    <None Include="obj\Debug\edmxResourcesToEmbed\Model1.ssdl" />
+    <None Include="obj\Debug\Proje.DataAccess.csproj.CopyComplete" />
+    <None Include="obj\Debug\Proje.DataAccess.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Proje.DataAccess.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\Proje.DataAccess.dll" />
+    <Content Include="bin\Debug\Proje.DataAccess.pdb" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="obj\Debug\Proje.DataAccess.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Proje.DataAccess.dll" />
+    <Content Include="obj\Debug\Proje.DataAccess.pdb" />
+    <Content Include="obj\Debug\TempPE\Model1.Context.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Model1.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Model1.Designer.cs.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
