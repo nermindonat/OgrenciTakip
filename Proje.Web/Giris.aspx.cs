@@ -28,8 +28,17 @@ namespace Proje.Web
             string kullaniciSifre = tbxSifre.Value;
             var kullanici = _kullanicilar.KullaniciKontrol(kullaniciEmail, kullaniciSifre, kullaniciTurId);
 
-            if(kullanici.Count>=1)
+            
+
+            if (kullanici.Count>=1)
             {
+
+                Session["Email"] = tbxKullaniciEmail;
+                Session["KulAd"] = "kulAd";
+                Session["KulId"] = "kullaniciId";
+                Session["Sifre"] = tbxSifre;
+                Session["KulTurId"] = "kullaniciTurId";
+
                 Response.Redirect("Default.aspx");
             }
             else

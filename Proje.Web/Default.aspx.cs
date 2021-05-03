@@ -15,7 +15,12 @@ namespace Proje.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            MenuleriListele();
+            if (!IsPostBack)
+            {
+                MenuleriListele();
+            }
+            
+
         }
 
         private void MenuleriListele()
@@ -23,8 +28,6 @@ namespace Proje.Web
             var liste = menuler.MenuleriListele();
             rptMenuler.DataSource = liste;
             rptMenuler.DataBind();
-        }
-
-       
+        }      
     }
 }

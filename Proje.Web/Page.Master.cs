@@ -11,7 +11,11 @@ namespace Proje.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            if (string.IsNullOrEmpty((string)Session["KulAd"]))
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
     }
 }
