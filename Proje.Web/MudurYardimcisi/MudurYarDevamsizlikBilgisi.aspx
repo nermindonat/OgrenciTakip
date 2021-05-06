@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="DevamsizlikBilgisi.aspx.cs" Inherits="Proje.Web.DevamsizlikBilgisi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="MudurYarDevamsizlikBilgisi.aspx.cs" Inherits="Proje.Web.MudurYardimcisi.MudurYarDevamsizlikBilgisi" %>
 
 <%@ Register Src="~/UserKontrol/UserDevamsizlik.ascx" TagPrefix="uc1" TagName="UserDevamsizlik" %>
 

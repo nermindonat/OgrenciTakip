@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace Proje.Web
+namespace Proje.Web.Ogretmen
 {
-    public partial class Default1
+    public partial class OgretmenNotGirisi
     {
     }
 }

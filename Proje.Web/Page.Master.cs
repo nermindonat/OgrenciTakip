@@ -9,14 +9,28 @@ namespace Proje.Web
 {
     public partial class Page : System.Web.UI.MasterPage
     {
+        Business.Menuler menuler = new Business.Menuler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var kisiId = Convert.ToInt32(Session["KulId"]);
-            if(string.IsNullOrEmpty((string)Session["AdSoyad"]))
+            if (!IsPostBack)
             {
-               
-                Response.Redirect("Default.aspx");
-            }
+                var kisiId = Convert.ToInt32(Session["KulId"]);
+                var kulTurId = Convert.ToInt32(Session["KulTurId"]);
+                if (string.IsNullOrEmpty((string)Session["AdSoyad"]))
+                {
+
+                    Response.Redirect("Giris.aspx");
+                }
+
+                MenuleriListele(kulTurId);
+            }           
+        }
+
+        private void MenuleriListele(int kulTurId)
+        {
+            var liste = menuler.KulllaniciTurIdIleListele(kulTurId);
+            rptMenuler.DataSource = liste;
+            rptMenuler.DataBind();
         }
     }
 }

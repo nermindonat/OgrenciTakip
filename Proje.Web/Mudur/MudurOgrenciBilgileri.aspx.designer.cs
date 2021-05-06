@@ -7,20 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Proje.Web
+namespace Proje.Web.Mudur
 {
 
 
-    public partial class NotGirisi
+    public partial class MudurOgrenciBilgileri
     {
-
-        /// <summary>
-        /// UserNotGirisi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Proje.Web.UserKontrol.UserNotGirisi UserNotGirisi;
     }
 }

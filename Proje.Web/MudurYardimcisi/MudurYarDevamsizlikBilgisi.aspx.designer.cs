@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Proje.Web
+namespace Proje.Web.MudurYardimcisi
 {
 
 
-    public partial class NotGirisi
+    public partial class MudurYarDevamsizlikBilgisi
     {
 
         /// <summary>
-        /// UserNotGirisi control.
+        /// UserDevamsizlik control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Proje.Web.UserKontrol.UserNotGirisi UserNotGirisi;
+        protected global::Proje.Web.UserKontrol.UserDevamsizlik UserDevamsizlik;
     }
 }

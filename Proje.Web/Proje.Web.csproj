@@ -128,9 +128,18 @@
     <Content Include="Default.aspx" />
     <Content Include="DevamsizlikBilgisi.aspx" />
     <Content Include="Giris.aspx" />
+    <Content Include="MudurYardimcisi\MudurYarDevamsizlikBilgisi.aspx" />
+    <Content Include="MudurYardimcisi\MudurYarOgrenciBilgileri.aspx" />
+    <Content Include="Mudur\MudurDevamsizlikBilgisi.aspx" />
+    <Content Include="Mudur\MudurNotGirisi.aspx" />
+    <Content Include="Mudur\MudurOgrenciBilgileri.aspx" />
     <Content Include="obj\Debug\Proje.Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Proje.Web.dll" />
     <Content Include="obj\Debug\Proje.Web.pdb" />
+    <Content Include="Ogretmen\OgretmenNotGirisi.aspx" />
+    <Content Include="UserKontrol\UserDevamsizlik.ascx" />
+    <Content Include="UserKontrol\UserNotGirisi.ascx" />
+    <Content Include="UserKontrol\UserOgrenciBilgisi.ascx" />
     <Content Include="YetkiGirisi.aspx" />
     <Content Include="Myproject\.idea\.gitignore" />
     <Content Include="Myproject\.idea\modules.xml" />
@@ -256,7 +265,70 @@
     <Compile Include="Giris.aspx.designer.cs">
       <DependentUpon>Giris.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MudurYardimcisi\MudurYarDevamsizlikBilgisi.aspx.cs">
+      <DependentUpon>MudurYarDevamsizlikBilgisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MudurYardimcisi\MudurYarDevamsizlikBilgisi.aspx.designer.cs">
+      <DependentUpon>MudurYarDevamsizlikBilgisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MudurYardimcisi\MudurYarOgrenciBilgileri.aspx.cs">
+      <DependentUpon>MudurYarOgrenciBilgileri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MudurYardimcisi\MudurYarOgrenciBilgileri.aspx.designer.cs">
+      <DependentUpon>MudurYarOgrenciBilgileri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mudur\MudurDevamsizlikBilgisi.aspx.cs">
+      <DependentUpon>MudurDevamsizlikBilgisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mudur\MudurDevamsizlikBilgisi.aspx.designer.cs">
+      <DependentUpon>MudurDevamsizlikBilgisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mudur\MudurNotGirisi.aspx.cs">
+      <DependentUpon>MudurNotGirisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mudur\MudurNotGirisi.aspx.designer.cs">
+      <DependentUpon>MudurNotGirisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mudur\MudurOgrenciBilgileri.aspx.cs">
+      <DependentUpon>MudurOgrenciBilgileri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mudur\MudurOgrenciBilgileri.aspx.designer.cs">
+      <DependentUpon>MudurOgrenciBilgileri.aspx</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Ogretmen\OgretmenNotGirisi.aspx.cs">
+      <DependentUpon>OgretmenNotGirisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ogretmen\OgretmenNotGirisi.aspx.designer.cs">
+      <DependentUpon>OgretmenNotGirisi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserKontrol\UserDevamsizlik.ascx.cs">
+      <DependentUpon>UserDevamsizlik.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserKontrol\UserDevamsizlik.ascx.designer.cs">
+      <DependentUpon>UserDevamsizlik.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserKontrol\UserNotGirisi.ascx.cs">
+      <DependentUpon>UserNotGirisi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserKontrol\UserNotGirisi.ascx.designer.cs">
+      <DependentUpon>UserNotGirisi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserKontrol\UserOgrenciBilgisi.ascx.cs">
+      <DependentUpon>UserOgrenciBilgisi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserKontrol\UserOgrenciBilgisi.ascx.designer.cs">
+      <DependentUpon>UserOgrenciBilgisi.ascx</DependentUpon>
+    </Compile>
     <Compile Include="YetkiGirisi.aspx.cs">
       <DependentUpon>YetkiGirisi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,7 +413,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="UserKontrol\" />
+    <Folder Include="RehberOgretmen\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

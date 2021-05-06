@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Proje.Web
+namespace Proje.Web.UserKontrol
 {
-    public partial class Default1 : System.Web.UI.Page
+    public partial class UserDevamsizlik : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

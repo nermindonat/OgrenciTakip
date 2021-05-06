@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace Proje.Web
+namespace Proje.Web.Mudur
 {
-    public partial class Default1
+    public partial class MudurDevamsizlikBilgisi
     {
     }
 }
