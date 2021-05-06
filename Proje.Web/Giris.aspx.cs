@@ -26,27 +26,44 @@ namespace Proje.Web
             int kullaniciTurId = int.Parse(Request.QueryString["kullaniciTurId"]);
             string kullaniciEmail = tbxKullaniciEmail.Value;
             string kullaniciSifre = tbxSifre.Value;
+
             var kullanici = _kullanicilar.KullaniciKontrol(kullaniciEmail, kullaniciSifre, kullaniciTurId);
 
-            
-
-            if (kullanici.Count>=1)
+            foreach (var kul in kullanici)
             {
+                if((kul.Email==kullaniciEmail) && (kul.Sifre == kullaniciSifre))
+                {
+                   
+                    if (kullanici.Count >= 1)
+                    {
+                        foreach (var oturum in kullanici)
+                        {
+                            Session["KulId"] = oturum.KulId;
+                            Session["KulTurId"] = oturum.FkKulTurId;
+                            Session["AdSoyad"] = oturum.KulAd + " " + oturum.KulSoyad;
+                            
 
-                Session["Email"] = tbxKullaniciEmail;
-                Session["KulAd"] = "kulAd";
-                Session["KulId"] = "kullaniciId";
-                Session["Sifre"] = tbxSifre;
-                Session["KulTurId"] = "kullaniciTurId";
+                        }
 
-                Response.Redirect("Default.aspx");
-            }
-            else
-            {
-                Label1.Visible = true;
-                Label1.Text = "Hatalı giriş";
+                        
+                        Response.Redirect("Default.aspx");
 
-            }
+                    }
+
+                    else
+                    {
+                        Label1.Visible = true;
+                        Label1.Text = "Hatalı giriş";
+
+                    }
+                }
+                else
+                {
+                    Label1.Visible = true;
+                    Label1.Text = "Hatalı giriş";
+
+                }
+            }                       
         }
     }
 }

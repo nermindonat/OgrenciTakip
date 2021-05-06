@@ -11,9 +11,10 @@ namespace Proje.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (string.IsNullOrEmpty((string)Session["KulAd"]))
+            var kisiId = Convert.ToInt32(Session["KulId"]);
+            if(string.IsNullOrEmpty((string)Session["AdSoyad"]))
             {
+               
                 Response.Redirect("Default.aspx");
             }
         }

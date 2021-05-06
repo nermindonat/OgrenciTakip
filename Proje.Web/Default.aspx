@@ -135,7 +135,7 @@
                             <li class="user-profile header-notification">
                                 <a href="#!">
                                     <img src="/Myproject/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>John Doe</span>
+                                    <span><%=Session["AdSoyad"].ToString()%></span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -198,7 +198,7 @@
                                         <asp:Repeater ID="rptMenuler" runat="server">
                                         <ItemTemplate>
                                         <li class=" ">
-                                            <a href="NotGirisi.aspx">                          
+                                            <a href="">                          
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert"><%# Eval("MenuAd") %></span>
                                                 <span class="pcoded-mcaret"></span>

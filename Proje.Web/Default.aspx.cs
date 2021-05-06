@@ -25,6 +25,7 @@ namespace Proje.Web
 
         private void MenuleriListele()
         {
+            
             var liste = menuler.MenuleriListele();
             rptMenuler.DataSource = liste;
             rptMenuler.DataBind();
