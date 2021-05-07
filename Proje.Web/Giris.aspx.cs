@@ -10,7 +10,7 @@ namespace Proje.Web
     public partial class Giris1 : System.Web.UI.Page
     {
         Business.Kullanicilar _kullanicilar = new Business.Kullanicilar();
-
+        Business.KullaniciTurleri _kullaniciTurleri = new Business.KullaniciTurleri();
         protected void Page_Load(object sender, EventArgs e)
         {
             //KullanicilariListele();
@@ -41,10 +41,9 @@ namespace Proje.Web
                             Session["KulId"] = oturum.KulId;
                             Session["KulTurId"] = oturum.FkKulTurId;
                             Session["AdSoyad"] = oturum.KulAd + " " + oturum.KulSoyad;
-                            
-
                         }
 
+                        Session["KullaniciTurAd"] = _kullaniciTurleri.KullaniciTurAdGetir(kullaniciTurId);
                         
                         Response.Redirect("Default.aspx");
 

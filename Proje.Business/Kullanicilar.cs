@@ -10,10 +10,6 @@ namespace Proje.Business
     {
         public string Email { get; set; }
         public string Sifre { get; set; }
-
-
-
-
         public List<Proje.DataAccess.Kullanicilar> KullaniciKontrol(string email, string sifre, int kullaniciTurId)
         {
             Proje.DataAccess.OgrenciTakipEntities1 entities = new Proje.DataAccess.OgrenciTakipEntities1();
@@ -23,7 +19,6 @@ namespace Proje.Business
             return liste;
 
         }
-
 
     }
 }

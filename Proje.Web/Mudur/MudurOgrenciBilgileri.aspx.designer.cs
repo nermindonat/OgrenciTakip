@@ -13,5 +13,14 @@ namespace Proje.Web.Mudur
 
     public partial class MudurOgrenciBilgileri
     {
+
+        /// <summary>
+        /// UserOgrenciBilgisi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Proje.Web.UserKontrol.UserOgrenciBilgisi UserOgrenciBilgisi;
     }
 }

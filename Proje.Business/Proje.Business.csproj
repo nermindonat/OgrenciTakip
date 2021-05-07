@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Kullanicilar.cs" />
+    <Compile Include="KullaniciTurleri.cs" />
     <Compile Include="Menuler.cs" />
     <Compile Include="OgrBilgi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
