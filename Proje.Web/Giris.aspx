@@ -96,9 +96,11 @@
                                     <div class="col-md-12">
                                         <button runat="server" id="btnGiris" type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" onserverclick="btnGiris_OnServerClick">Giriş Yap</button>
                                     </div>
+                                    <asp:Label runat="server" ID="lbl"  Text="Label" Visible="false"></asp:Label>
                                 </div>
-                                <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+                                
                                 <hr/>
+                                
                                
 
                             </div>

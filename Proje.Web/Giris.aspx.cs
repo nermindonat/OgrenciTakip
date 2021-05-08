@@ -14,6 +14,7 @@ namespace Proje.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             //KullanicilariListele();
+
         }
 
         //private void KullanicilariListele()
@@ -51,15 +52,15 @@ namespace Proje.Web
 
                     else
                     {
-                        Label1.Visible = true;
-                        Label1.Text = "Hatalı giriş";
+                        lbl.Visible = true;
+                        lbl.Text = "Hatalı giriş";
 
                     }
                 }
                 else
                 {
-                    Label1.Visible = true;
-                    Label1.Text = "Hatalı giriş";
+                    lbl.Visible = true;
+                    lbl.Text = "Hatalı giriş";
 
                 }
             }                       

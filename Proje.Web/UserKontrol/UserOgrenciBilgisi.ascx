@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserOgrenciBilgisi.ascx.cs" Inherits="Proje.Web.UserKontrol.UserOgrenciBilgisi" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserOgrenciBilgisi.ascx.cs" Inherits="OgrenciBilgisi" %>
 
  <div class="card">
         <div class="card-block">
@@ -27,7 +27,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Öğrenci Adı</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control">
+                        <input type="text" id="ogrenciAd" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -50,13 +50,14 @@
 
                 </div>
                 <div class="card-block " style="text-align: center;">
-                    <button class="btn btn-info btn-round  col-sm-2">
-                        Güncelle
-                                                                   
+                    <button runat="server" id="btnKaydet" class="btn btn-success btn-round col-sm-2" onserverclick="btnKaydet_ServerClick">
+                        Kaydet
                     </button>
-                    <button class="btn btn-warning btn-round col-sm-2">
+                    <button runat="server" id="btnGuncelle" class="btn btn-info btn-round  col-sm-2" onserverclick="btnGuncelle_ServerClick">
+                        Güncelle
+                    </button>
+                    <button runat="server" id="btnSil" class="btn btn-warning btn-round col-sm-2" onserverclick="btnSil_ServerClick">
                         Sil
-                                                                   
                     </button>
                 </div>
             </form>

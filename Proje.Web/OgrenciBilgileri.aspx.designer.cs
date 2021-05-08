@@ -11,7 +11,7 @@ namespace Proje.Web
 {
 
 
-    public partial class OgrenciBilgileri
+    public partial class UserOgrenciBilgisi
     {
 
         /// <summary>
@@ -21,6 +21,6 @@ namespace Proje.Web
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Proje.Web.UserKontrol.UserOgrenciBilgisi UserOgrenciBilgisi;
+        protected global::Proje.Web.UserKontrol.OgrenciBilgi UserOgrenciBilgisi;
     }
 }

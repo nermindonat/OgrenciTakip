@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="OgrenciBilgileri.aspx.cs" Inherits="Proje.Web.OgrenciBilgileri" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page.Master" AutoEventWireup="true" CodeBehind="OgrenciBilgileri.aspx.cs" Inherits="Proje.Web.UserOgrenciBilgisi" %>
 
 <%@ Register Src="~/UserKontrol/UserOgrenciBilgisi.ascx" TagPrefix="uc1" TagName="UserOgrenciBilgisi" %>
 
