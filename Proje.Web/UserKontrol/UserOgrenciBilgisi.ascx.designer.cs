@@ -7,35 +7,83 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-
-public partial class OgrenciBilgisi
+namespace Proje.Web.UserKontrol
 {
 
-    /// <summary>
-    /// btnKaydet control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlButton btnKaydet;
 
-    /// <summary>
-    /// btnGuncelle control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlButton btnGuncelle;
+    public partial class UserOgrenciBilgisi
+    {
 
-    /// <summary>
-    /// btnSil control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlButton btnSil;
+        /// <summary>
+        /// txtOgrenciNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciNo;
+
+        /// <summary>
+        /// txtOgrenciAd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciAd;
+
+        /// <summary>
+        /// txtOgrenciSoyad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciSoyad;
+
+        /// <summary>
+        /// selectSinif control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect selectSinif;
+
+        /// <summary>
+        /// txtAdres control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtAdres;
+
+        /// <summary>
+        /// btnKaydet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnKaydet;
+
+        /// <summary>
+        /// btnGuncelle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnGuncelle;
+
+        /// <summary>
+        /// btnSil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSil;
+    }
 }

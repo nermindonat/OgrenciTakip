@@ -12,7 +12,7 @@ namespace Proje.Business
         public string KulTurAd { get; set; }
         public string KullaniciTurAdGetir(int kulTurId)
         {
-            Proje.DataAccess.OgrenciTakipEntities1 entities = new Proje.DataAccess.OgrenciTakipEntities1();
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
             Proje.DataAccess.KullaniciTurleri kullaniciTurleri = new Proje.DataAccess.KullaniciTurleri();
 
             string kullaniciTurAd = null;

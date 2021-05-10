@@ -9,8 +9,17 @@
           <Key>
             <PropertyRef Name="BransId" />
           </Key>
-          <Property Name="BransId" Type="int" Nullable="false" />
+          <Property Name="BransId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BransAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DevamsizlikBilgi">
+          <Key>
+            <PropertyRef Name="DevamsizlikId" />
+          </Key>
+          <Property Name="DevamsizlikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FkOgrBilgiId" Type="int" Nullable="false" />
+          <Property Name="DevamsizlikTarih" Type="datetime" />
+          <Property Name="DevamsizlikTur" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Kullanicilar">
           <Key>
@@ -18,7 +27,7 @@
           </Key>
           <Property Name="KulId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FkKulTurId" Type="int" Nullable="false" />
-          <Property Name="FkOgrId" Type="int" Nullable="false" />
+          <Property Name="FkOgretmenId" Type="int" Nullable="false" />
           <Property Name="FkSinifId" Type="int" Nullable="false" />
           <Property Name="KulAd" Type="nvarchar" MaxLength="50" />
           <Property Name="KulSoyad" Type="nvarchar" MaxLength="50" />
@@ -62,8 +71,7 @@
           <Property Name="OgrAd" Type="nvarchar" MaxLength="50" />
           <Property Name="OgrSoyad" Type="nvarchar" MaxLength="50" />
           <Property Name="OgrNo" Type="int" />
-          <Property Name="DevamsizlikTarih" Type="datetime" />
-          <Property Name="DevamsizlikTur" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Ogretmenler">
           <Key>
@@ -96,8 +104,20 @@
             <PropertyRef Name="SinifId" />
           </Key>
           <Property Name="SinifId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Sube" Type="nchar" MaxLength="10" />
+          <Property Name="Sube" Type="varchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_DevamsizlikBilgi_OgrBilgi">
+          <End Role="OgrBilgi" Type="Self.OgrBilgi" Multiplicity="1" />
+          <End Role="DevamsizlikBilgi" Type="Self.DevamsizlikBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OgrBilgi">
+              <PropertyRef Name="OgrBilgiId" />
+            </Principal>
+            <Dependent Role="DevamsizlikBilgi">
+              <PropertyRef Name="FkOgrBilgiId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Kullanicilar_KullaniciTurleri">
           <End Role="KullaniciTurleri" Type="Self.KullaniciTurleri" Multiplicity="1" />
           <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="*" />
@@ -184,6 +204,7 @@
         </Association>
         <EntityContainer Name="OgrenciTakipModelStoreContainer">
           <EntitySet Name="Branslar" EntityType="Self.Branslar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DevamsizlikBilgi" EntityType="Self.DevamsizlikBilgi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KullaniciTurleri" EntityType="Self.KullaniciTurleri" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menuler" EntityType="Self.Menuler" Schema="dbo" store:Type="Tables" />
@@ -193,6 +214,10 @@
           <EntitySet Name="OgretmenSinif" EntityType="Self.OgretmenSinif" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OkulBilgi" EntityType="Self.OkulBilgi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Siniflar" EntityType="Self.Siniflar" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DevamsizlikBilgi_OgrBilgi" Association="Self.FK_DevamsizlikBilgi_OgrBilgi">
+            <End Role="OgrBilgi" EntitySet="OgrBilgi" />
+            <End Role="DevamsizlikBilgi" EntitySet="DevamsizlikBilgi" />
+          </AssociationSet>
           <AssociationSet Name="FK_Kullanicilar_KullaniciTurleri" Association="Self.FK_Kullanicilar_KullaniciTurleri">
             <End Role="KullaniciTurleri" EntitySet="KullaniciTurleri" />
             <End Role="Kullanicilar" EntitySet="Kullanicilar" />
@@ -231,9 +256,19 @@
           <Key>
             <PropertyRef Name="BransId" />
           </Key>
-          <Property Name="BransId" Type="Int32" Nullable="false" />
+          <Property Name="BransId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BransAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Ogretmenler" Relationship="Self.FK_Ogretmenler_Branslar" FromRole="Branslar" ToRole="Ogretmenler" />
+        </EntityType>
+        <EntityType Name="DevamsizlikBilgi">
+          <Key>
+            <PropertyRef Name="DevamsizlikId" />
+          </Key>
+          <Property Name="DevamsizlikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FkOgrBilgiId" Type="Int32" Nullable="false" />
+          <Property Name="DevamsizlikTarih" Type="DateTime" Precision="3" />
+          <Property Name="DevamsizlikTur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OgrBilgi" Relationship="Self.FK_DevamsizlikBilgi_OgrBilgi" FromRole="DevamsizlikBilgi" ToRole="OgrBilgi" />
         </EntityType>
         <EntityType Name="Kullanicilar">
           <Key>
@@ -241,7 +276,7 @@
           </Key>
           <Property Name="KulId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FkKulTurId" Type="Int32" Nullable="false" />
-          <Property Name="FkOgrId" Type="Int32" Nullable="false" />
+          <Property Name="FkOgretmenId" Type="Int32" Nullable="false" />
           <Property Name="FkSinifId" Type="Int32" Nullable="false" />
           <Property Name="KulAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KulSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -289,8 +324,8 @@
           <Property Name="OgrAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OgrSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OgrNo" Type="Int32" />
-          <Property Name="DevamsizlikTarih" Type="DateTime" Precision="3" />
-          <Property Name="DevamsizlikTur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DevamsizlikBilgi" Relationship="Self.FK_DevamsizlikBilgi_OgrBilgi" FromRole="OgrBilgi" ToRole="DevamsizlikBilgi" />
           <NavigationProperty Name="Siniflar" Relationship="Self.FK_OgrBilgi_Siniflar" FromRole="OgrBilgi" ToRole="Siniflar" />
         </EntityType>
         <EntityType Name="Ogretmenler">
@@ -329,7 +364,7 @@
             <PropertyRef Name="SinifId" />
           </Key>
           <Property Name="SinifId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Sube" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Sube" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Kullanicilar" Relationship="Self.FK_Kullanicilar_Siniflar" FromRole="Siniflar" ToRole="Kullanicilar" />
           <NavigationProperty Name="OgrBilgi" Relationship="Self.FK_OgrBilgi_Siniflar" FromRole="Siniflar" ToRole="OgrBilgi" />
           <NavigationProperty Name="OgretmenSinif" Relationship="Self.FK_OgretmenSinif_Siniflar" FromRole="Siniflar" ToRole="OgretmenSinif" />
@@ -343,6 +378,18 @@
             </Principal>
             <Dependent Role="Ogretmenler">
               <PropertyRef Name="FkBransId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DevamsizlikBilgi_OgrBilgi">
+          <End Role="OgrBilgi" Type="Self.OgrBilgi" Multiplicity="1" />
+          <End Role="DevamsizlikBilgi" Type="Self.DevamsizlikBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OgrBilgi">
+              <PropertyRef Name="OgrBilgiId" />
+            </Principal>
+            <Dependent Role="DevamsizlikBilgi">
+              <PropertyRef Name="FkOgrBilgiId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -418,8 +465,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="OgrenciTakipEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="OgrenciTakipEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Branslar" EntityType="Self.Branslar" />
+          <EntitySet Name="DevamsizlikBilgi" EntityType="Self.DevamsizlikBilgi" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
           <EntitySet Name="KullaniciTurleri" EntityType="Self.KullaniciTurleri" />
           <EntitySet Name="Menuler" EntityType="Self.Menuler" />
@@ -432,6 +480,10 @@
           <AssociationSet Name="FK_Ogretmenler_Branslar" Association="Self.FK_Ogretmenler_Branslar">
             <End Role="Branslar" EntitySet="Branslar" />
             <End Role="Ogretmenler" EntitySet="Ogretmenler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DevamsizlikBilgi_OgrBilgi" Association="Self.FK_DevamsizlikBilgi_OgrBilgi">
+            <End Role="OgrBilgi" EntitySet="OgrBilgi" />
+            <End Role="DevamsizlikBilgi" EntitySet="DevamsizlikBilgi" />
           </AssociationSet>
           <AssociationSet Name="FK_Kullanicilar_KullaniciTurleri" Association="Self.FK_Kullanicilar_KullaniciTurleri">
             <End Role="KullaniciTurleri" EntitySet="KullaniciTurleri" />
@@ -463,7 +515,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OgrenciTakipModelStoreContainer" CdmEntityContainer="OgrenciTakipEntities1">
+        <EntityContainerMapping StorageEntityContainer="OgrenciTakipModelStoreContainer" CdmEntityContainer="OgrenciTakipEntities">
           <EntitySetMapping Name="Branslar">
             <EntityTypeMapping TypeName="OgrenciTakipModel.Branslar">
               <MappingFragment StoreEntitySet="Branslar">
@@ -472,12 +524,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DevamsizlikBilgi">
+            <EntityTypeMapping TypeName="OgrenciTakipModel.DevamsizlikBilgi">
+              <MappingFragment StoreEntitySet="DevamsizlikBilgi">
+                <ScalarProperty Name="DevamsizlikId" ColumnName="DevamsizlikId" />
+                <ScalarProperty Name="FkOgrBilgiId" ColumnName="FkOgrBilgiId" />
+                <ScalarProperty Name="DevamsizlikTarih" ColumnName="DevamsizlikTarih" />
+                <ScalarProperty Name="DevamsizlikTur" ColumnName="DevamsizlikTur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Kullanicilar">
             <EntityTypeMapping TypeName="OgrenciTakipModel.Kullanicilar">
               <MappingFragment StoreEntitySet="Kullanicilar">
                 <ScalarProperty Name="KulId" ColumnName="KulId" />
                 <ScalarProperty Name="FkKulTurId" ColumnName="FkKulTurId" />
-                <ScalarProperty Name="FkOgrId" ColumnName="FkOgrId" />
+                <ScalarProperty Name="FkOgretmenId" ColumnName="FkOgretmenId" />
                 <ScalarProperty Name="FkSinifId" ColumnName="FkSinifId" />
                 <ScalarProperty Name="KulAd" ColumnName="KulAd" />
                 <ScalarProperty Name="KulSoyad" ColumnName="KulSoyad" />
@@ -525,8 +587,7 @@
                 <ScalarProperty Name="OgrAd" ColumnName="OgrAd" />
                 <ScalarProperty Name="OgrSoyad" ColumnName="OgrSoyad" />
                 <ScalarProperty Name="OgrNo" ColumnName="OgrNo" />
-                <ScalarProperty Name="DevamsizlikTarih" ColumnName="DevamsizlikTarih" />
-                <ScalarProperty Name="DevamsizlikTur" ColumnName="DevamsizlikTur" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

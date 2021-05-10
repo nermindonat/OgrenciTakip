@@ -13,10 +13,10 @@ namespace Proje.DataAccess
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OgrenciTakipEntities1 : DbContext
+    public partial class OgrenciTakipEntities : DbContext
     {
-        public OgrenciTakipEntities1()
-            : base("name=OgrenciTakipEntities1")
+        public OgrenciTakipEntities()
+            : base("name=OgrenciTakipEntities")
         {
         }
     
@@ -26,6 +26,7 @@ namespace Proje.DataAccess
         }
     
         public virtual DbSet<Branslar> Branslar { get; set; }
+        public virtual DbSet<DevamsizlikBilgi> DevamsizlikBilgi { get; set; }
         public virtual DbSet<Kullanicilar> Kullanicilar { get; set; }
         public virtual DbSet<KullaniciTurleri> KullaniciTurleri { get; set; }
         public virtual DbSet<Menuler> Menuler { get; set; }

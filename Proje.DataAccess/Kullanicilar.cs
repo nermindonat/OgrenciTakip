@@ -15,14 +15,8 @@ namespace Proje.DataAccess
     public partial class Kullanicilar
     {
         public int KulId { get; set; }
-
-        public object KullanicilariListele<T>()
-        {
-            throw new NotImplementedException();
-        }
-
         public int FkKulTurId { get; set; }
-        public int FkOgrId { get; set; }
+        public int FkOgretmenId { get; set; }
         public int FkSinifId { get; set; }
         public string KulAd { get; set; }
         public string KulSoyad { get; set; }

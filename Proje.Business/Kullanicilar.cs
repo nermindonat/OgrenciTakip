@@ -12,7 +12,7 @@ namespace Proje.Business
         public string Sifre { get; set; }
         public List<Proje.DataAccess.Kullanicilar> KullaniciKontrol(string email, string sifre, int kullaniciTurId)
         {
-            Proje.DataAccess.OgrenciTakipEntities1 entities = new Proje.DataAccess.OgrenciTakipEntities1();
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
             Proje.DataAccess.Kullanicilar kullanicilar = new Proje.DataAccess.Kullanicilar();
 
             var liste = entities.Kullanicilar.Where(p => p.FkKulTurId == kullaniciTurId && p.Email == email && p.Sifre == sifre).ToList();

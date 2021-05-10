@@ -21,6 +21,6 @@ namespace Proje.Web.Mudur
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Proje.Web.UserKontrol.OgrenciBilgi UserOgrenciBilgisi;
+        protected global::Proje.Web.UserKontrol.UserOgrenciBilgisi UserOgrenciBilgisi;
     }
 }

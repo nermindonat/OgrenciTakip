@@ -14,7 +14,7 @@ namespace Proje.Business
 
         public List<Proje.DataAccess.Menuler> MenuleriListele(int kulTurId)
         {
-            Proje.DataAccess.OgrenciTakipEntities1 entities = new Proje.DataAccess.OgrenciTakipEntities1();
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
             Proje.DataAccess.Menuler menuler = new Proje.DataAccess.Menuler();
 
             var liste = entities.Menuler.ToList();
@@ -25,7 +25,7 @@ namespace Proje.Business
 
         public List<Proje.DataAccess.Menuler> KulllaniciTurIdIleListele(int kulTurId)
         {
-            Proje.DataAccess.OgrenciTakipEntities1 entities = new Proje.DataAccess.OgrenciTakipEntities1();
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
             Proje.DataAccess.Menuler menuler = new Proje.DataAccess.Menuler();
 
             var liste = entities.Menuler.Where(p => p.Yetki == kulTurId).ToList();

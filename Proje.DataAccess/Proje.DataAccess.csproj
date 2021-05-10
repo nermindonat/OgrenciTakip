@@ -54,6 +54,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="DevamsizlikBilgi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Kullanicilar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

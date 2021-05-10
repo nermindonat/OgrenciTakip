@@ -12,24 +12,25 @@ namespace Proje.Business
         public string OgrAd { get; set; }
         public string OgrSoyad { get; set; }
         public Nullable<int> OgrNo { get; set; }
-        public Nullable<System.DateTime> DevamsizlikTarih { get; set; }
-        public string DevamsizlikTur { get; set; }
+        public string Adres { get; set; }
+
 
         public List<Proje.DataAccess.OgrBilgi> OgrenciBilgi(int ogrId)
         {
-            Proje.DataAccess.OgrenciTakipEntities1 entities = new Proje.DataAccess.OgrenciTakipEntities1();
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
             Proje.DataAccess.OgrBilgi ogrBilgi = new Proje.DataAccess.OgrBilgi();
 
-            var liste = entities.OgrBilgi.Where(p => p.FkSinifId == ogrId).ToList();
+            var liste = entities.OgrBilgi.Where(p => p.OgrBilgiId == ogrId).ToList();
             return liste;
         }
 
         public void Ekle(OgrBilgi ogrBilgi)
         {
-            Proje.DataAccess.OgrenciTakipEntities1 entities = new Proje.DataAccess.OgrenciTakipEntities1();
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
             Proje.DataAccess.OgrBilgi ogrenci = new Proje.DataAccess.OgrBilgi();
 
-            
+            entities.OgrBilgi.Add(ogrenci);
+            entities.SaveChanges();
         }
     }
 }

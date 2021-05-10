@@ -4,8 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="36e0c51031044021ba356ee1d1ad0f2b" Name="Diagram1">
+      <Diagram DiagramId="9dc43668cdf547089ed8ccdf5ae50ff2" Name="Diagram1">
         <EntityTypeShape EntityType="OgrenciTakipModel.Branslar" Width="1.5" PointX="1.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.DevamsizlikBilgi" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="OgrenciTakipModel.Kullanicilar" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="OgrenciTakipModel.KullaniciTurleri" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="OgrenciTakipModel.Menuler" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
@@ -16,6 +17,7 @@
         <EntityTypeShape EntityType="OgrenciTakipModel.OkulBilgi" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="OgrenciTakipModel.Siniflar" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Ogretmenler_Branslar" ManuallyRouted="false" />
+        <AssociationConnector Association="OgrenciTakipModel.FK_DevamsizlikBilgi_OgrBilgi" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Kullanicilar_KullaniciTurleri" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Kullanicilar_Siniflar" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Ogretmenler_Notlar" ManuallyRouted="false" />

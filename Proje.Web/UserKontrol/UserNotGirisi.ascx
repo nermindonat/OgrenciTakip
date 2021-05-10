@@ -13,7 +13,7 @@
                             >Numara Girin</label
                           >
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" />
+                            <input runat="server" id="txtNumara" type="text" class="form-control" />
                           </div>
                           <button class="btn btn-danger btn-round">Öğrenci Ara</button>
                         </div>
@@ -33,11 +33,10 @@
                             </div>
                           </div>
                           <div class="form-group row">
-                            <label class="col-sm-2 col-form-label"
-                              >Öğrenci Adı</label
-                            >
+                            <label  class="col-sm-2 col-form-label"
+                              >Öğrenci Adı</label>
                             <div class="col-sm-10">
-                              <input type="text" class="form-control" />
+                              <input runat="server" id="txtOgrAd" type="text" class="form-control" />
                             </div>
                           </div>
                           <div class="form-group row">
