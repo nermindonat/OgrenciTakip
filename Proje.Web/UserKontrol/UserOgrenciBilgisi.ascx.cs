@@ -23,22 +23,21 @@ namespace Proje.Web.UserKontrol
         private void SiniflariListele()
         {
             var liste = _sinif.SiniflariListele();
-            selectSinif.DataSource = liste;
-            selectSinif.DataTextField = "Sube";
-            selectSinif.DataValueField = "SinifId";
-            selectSinif.DataBind();
+            ddlSinif.DataSource = liste;
+            ddlSinif.DataTextField = "Sube";
+            ddlSinif.DataValueField = "SinifId";
+            ddlSinif.DataBind();
         }
 
         protected void btnKaydet_ServerClick(object sender, EventArgs e)
         {
-            _ogrBilgi.Ekle(new Business.OgrBilgi()
+            _ogrBilgi.Ekle(new DataAccess.OgrBilgi()
             {
-                OgrNo=int.Parse(txtOgrenciNo.Value),
-                               
-                OgrAd=txtOgrenciAd.Value,
-                OgrSoyad=txtOgrenciSoyad.Value,
-                Adres=txtAdres.Value              
-                
+                FkSinifId = Convert.ToInt32(ddlSinif.SelectedValue),
+                OgrAd = txtOgrenciAd.Value,
+                OgrSoyad = txtOgrenciSoyad.Value,
+                OgrNo = int.Parse(txtOgrenciNo.Value),
+                Adres = txtAdres.Value
             });
 
         }
@@ -50,6 +49,14 @@ namespace Proje.Web.UserKontrol
 
         protected void btnSil_ServerClick(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnAra_ServerClick(object sender, EventArgs e)
+        {
+            int ogrenciNo = int.Parse(txtOgrenciNoAra.Value);
+
+            _ogrBilgi.OgrenciAra(ogrenciNo);       
 
         }
     }

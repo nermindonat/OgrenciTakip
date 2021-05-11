@@ -15,6 +15,24 @@ namespace Proje.Web.UserKontrol
     {
 
         /// <summary>
+        /// txtOgrenciNoAra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciNoAra;
+
+        /// <summary>
+        /// btnAra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnAra;
+
+        /// <summary>
         /// txtOgrenciNo control.
         /// </summary>
         /// <remarks>
@@ -22,6 +40,15 @@ namespace Proje.Web.UserKontrol
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciNo;
+
+        /// <summary>
+        /// rfvOgrenciNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOgrenciNo;
 
         /// <summary>
         /// txtOgrenciAd control.
@@ -33,6 +60,15 @@ namespace Proje.Web.UserKontrol
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciAd;
 
         /// <summary>
+        /// rfvOgrenciAd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOgrenciAd;
+
+        /// <summary>
         /// txtOgrenciSoyad control.
         /// </summary>
         /// <remarks>
@@ -42,13 +78,31 @@ namespace Proje.Web.UserKontrol
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciSoyad;
 
         /// <summary>
-        /// selectSinif control.
+        /// rfvOgrenciSoyad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect selectSinif;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOgrenciSoyad;
+
+        /// <summary>
+        /// ddlSinif control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSinif;
+
+        /// <summary>
+        /// rfvSinif control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSinif;
 
         /// <summary>
         /// txtAdres control.

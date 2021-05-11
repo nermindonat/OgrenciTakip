@@ -29,7 +29,6 @@ namespace Proje.Business
         {
             Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
             Proje.DataAccess.Siniflar sinif = new Proje.DataAccess.Siniflar();
-
             
             entities.Siniflar.Add(sinif);
             entities.SaveChanges();

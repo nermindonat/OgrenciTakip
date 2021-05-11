@@ -24,13 +24,28 @@ namespace Proje.Business
             return liste;
         }
 
-        public void Ekle(OgrBilgi ogrBilgi)
+        public void Ekle(DataAccess.OgrBilgi ogrBilgi)
         {
             Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
-            Proje.DataAccess.OgrBilgi ogrenci = new Proje.DataAccess.OgrBilgi();
 
-            entities.OgrBilgi.Add(ogrenci);
-            entities.SaveChanges();
+            var ogrenci = entities.OgrBilgi.Where(p => p.OgrNo == ogrBilgi.OgrNo).ToList();
+
+            if (ogrenci.Count==0)
+            {
+                entities.OgrBilgi.Add(ogrBilgi);
+                entities.SaveChanges();
+
+            }           
+        }
+
+        public List<Proje.DataAccess.OgrBilgi> OgrenciAra(int ogrNo)
+        {
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
+
+            var ogrenci = entities.OgrBilgi.Where(p => p.OgrNo == ogrNo).ToList();
+            return ogrenci;
+
+
         }
     }
 }
