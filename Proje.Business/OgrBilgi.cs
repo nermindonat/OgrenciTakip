@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,7 +46,20 @@ namespace Proje.Business
             var ogrenci = entities.OgrBilgi.Where(p => p.OgrNo == ogrNo).ToList();
             return ogrenci;
 
+        }
 
+        public void Guncelle(DataAccess.OgrBilgi ogrBilgi)
+        {
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
+
+            var ogrenci = entities.OgrBilgi.FirstOrDefault(p => p.OgrBilgiId == ogrBilgi.OgrBilgiId);
+            ogrenci.OgrAd = ogrBilgi.OgrAd;
+            if (ogrenci != null)
+            {
+                entities.OgrBilgi.Attach(ogrBilgi);
+                entities.Entry(ogrBilgi).State = EntityState.Modified;
+                entities.SaveChanges();
+            }
         }
     }
 }

@@ -12,8 +12,10 @@
                     <label class="col-sm-2 col-form-label">Öğrenci Numarası Girin</label>
                     <div class="col-sm-6">
                         <input runat="server" id="txtOgrenciNoAra" type="text" class="form-control">
+                      <asp:RequiredFieldValidator runat="server" ID="rfvOgrenciAra" CssClass="text-danger font-weight-bold" ControlToValidate="txtOgrenciNoAra" ErrorMessage="Lütfen öğrenci numarası giriniz." ValidationGroup="OgrenciAra"></asp:RequiredFieldValidator>
+
                     </div>
-                    <button runat="server" id="btnAra" class="btn btn-danger btn-round col-sm-1" onserverclick="btnAra_ServerClick">
+                    <button runat="server" id="btnAra" class="btn btn-danger btn-round col-sm-1" onserverclick="btnAra_ServerClick" validationgroup="OgrenciAra">
                         Ara
                     </button>
                 </div>
@@ -22,6 +24,13 @@
             <div class="card-block">
                 <h4 class="sub-title text-capitalize">Öğrenci Bilgileri</h4>
 
+                <div class="form-group row" hidden="true">
+                    <label class="col-sm-2 col-form-label">Öğrenci Id</label>
+                    <div class="col-sm-10">
+                        <input runat="server" id="txtOgrenciId" type="text" class="form-control" />
+
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Öğrenci Numarası</label>
                     <div class="col-sm-10">

@@ -44,6 +44,18 @@ namespace Proje.Web.UserKontrol
 
         protected void btnGuncelle_ServerClick(object sender, EventArgs e)
         {
+            if (!txtOgrenciId.Value.Equals(""))
+            {
+                _ogrBilgi.Guncelle(new DataAccess.OgrBilgi()
+                {
+                    OgrBilgiId=int.Parse(txtOgrenciId.Value),
+                    FkSinifId=int.Parse(ddlSinif.SelectedValue),
+                    OgrAd=txtOgrenciAd.Value,
+                    OgrSoyad=txtOgrenciSoyad.Value,
+                    OgrNo=int.Parse(txtOgrenciNo.Value),
+                    Adres=txtAdres.Value,
+                });
+            }
 
         }
 
@@ -55,8 +67,20 @@ namespace Proje.Web.UserKontrol
         protected void btnAra_ServerClick(object sender, EventArgs e)
         {
             int ogrenciNo = int.Parse(txtOgrenciNoAra.Value);
+            var ogrenci = _ogrBilgi.OgrenciAra(ogrenciNo);
 
-            _ogrBilgi.OgrenciAra(ogrenciNo);       
+            if (ogrenci.Count != 0)
+            {
+                foreach (var i in ogrenci)
+                {
+                    txtOgrenciId.Value = i.OgrBilgiId.ToString();
+                    txtOgrenciNo.Value = i.OgrNo.ToString();
+                    txtOgrenciAd.Value = i.OgrAd;
+                    txtOgrenciSoyad.Value = i.OgrSoyad;
+                    ddlSinif.SelectedValue = i.FkSinifId.ToString();
+                    txtAdres.Value = i.Adres;
+                }
+            }      
 
         }
     }

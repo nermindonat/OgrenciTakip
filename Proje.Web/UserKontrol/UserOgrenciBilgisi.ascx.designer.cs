@@ -24,6 +24,15 @@ namespace Proje.Web.UserKontrol
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciNoAra;
 
         /// <summary>
+        /// rfvOgrenciAra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvOgrenciAra;
+
+        /// <summary>
         /// btnAra control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Proje.Web.UserKontrol
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnAra;
+
+        /// <summary>
+        /// txtOgrenciId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtOgrenciId;
 
         /// <summary>
         /// txtOgrenciNo control.
