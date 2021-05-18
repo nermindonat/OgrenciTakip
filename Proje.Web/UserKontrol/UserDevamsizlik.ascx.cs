@@ -34,17 +34,16 @@ namespace Proje.Web.UserKontrol
         protected void btnOgrenciNoAra_ServerClick(object sender, EventArgs e)
         {
             int ogrNo = int.Parse(txtOgrenciNoAra.Value);
-            var ogrenci = _ogrBilgi.OgrenciAra(ogrNo);
+            var ogrenci = _devamsizlikBilgi.OgrenciAra(ogrNo);
 
             if (ogrenci.Count != 0)
             {
                 foreach (var i in ogrenci)
                 {
-                    txtOgrenciId.Value = i.OgrBilgiId.ToString();
-                    txtOgrenciNo.Value = i.OgrNo.ToString();
-                    txtOgrenciAd.Value = i.OgrAd;
-                    txtOgrenciSoyad.Value = i.OgrSoyad;
-                    ddlSinif.SelectedValue = i.FkSinifId.ToString();
+                    txtOgrenciId.Value = i.FkOgrBilgiId.ToString();
+                    txtTarih.Value = i.DevamsizlikTarih.ToString();
+                    selectDevamsizlikTur.Value = i.DevamsizlikTur.ToString();
+
                 }
 
             }
@@ -66,10 +65,12 @@ namespace Proje.Web.UserKontrol
         {
             if (!txtOgrenciId.Value.Equals(""))
             {
-                _devamsizlikBilgi.Guncelle(new DataAccess.DevamsizlikBilgi)
-                    {
-
-                }
+                _devamsizlikBilgi.Guncelle(new DataAccess.DevamsizlikBilgi()
+                {
+                    FkOgrBilgiId=int.Parse(txtOgrenciId.Value),
+                    DevamsizlikTarih=DateTime.Parse(txtTarih.Value),
+                    DevamsizlikTur=selectDevamsizlikTur.Value,
+                });
             }
             
 
@@ -77,7 +78,7 @@ namespace Proje.Web.UserKontrol
 
         protected void btnSil_ServerClick(object sender, EventArgs e)
         {
-
+            _devamsizlikBilgi.Sil(int.Parse(txtOgrenciId.Value));
         }
     }
 }

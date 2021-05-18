@@ -22,6 +22,14 @@ namespace Proje.Business
             return devamBilgileri;
         }
 
+        public List<Proje.DataAccess.DevamsizlikBilgi> OgrenciAra(int ogrenciId)
+        {
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
+
+            var ogrenci = entities.DevamsizlikBilgi.Where(p => p.FkOgrBilgiId == ogrenciId).ToList();
+            return ogrenci;
+        }
+
         public void Ekle(DataAccess.DevamsizlikBilgi devamsizlikBilgi)
         {
             
@@ -40,7 +48,7 @@ namespace Proje.Business
         {
             Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
 
-            var ogrenci = entities.DevamsizlikBilgi.FirstOrDefault(d => d.DevamsizlikId == devamsizlikBilgi.DevamsizlikId);
+            var ogrenci = entities.DevamsizlikBilgi.FirstOrDefault(d => d.FkOgrBilgiId == devamsizlikBilgi.FkOgrBilgiId);
 
             if (ogrenci != null)
             {
@@ -53,6 +61,19 @@ namespace Proje.Business
                 entities.SaveChanges();
             }
 
+        }
+
+        public void Sil(int devamsizlikId)
+        {
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
+
+            var ogrDevamsizlik = entities.DevamsizlikBilgi.FirstOrDefault(p => p.DevamsizlikId == devamsizlikId);
+
+            if (ogrDevamsizlik != null)
+            {
+                entities.DevamsizlikBilgi.Remove(ogrDevamsizlik);
+                entities.SaveChanges();
+            }
         }
 
     }
