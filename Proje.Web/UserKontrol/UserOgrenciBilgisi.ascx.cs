@@ -61,7 +61,7 @@ namespace Proje.Web.UserKontrol
 
         protected void btnSil_ServerClick(object sender, EventArgs e)
         {
-
+            _ogrBilgi.Sil(int.Parse(txtOgrenciId.Value));
         }
 
         protected void btnAra_ServerClick(object sender, EventArgs e)

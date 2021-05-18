@@ -1,6 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserNotGirisi.ascx.cs" Inherits="Proje.Web.UserKontrol.UserNotGirisi" %>
 
-<div class="card">
+<div class="pcoded-inner-content">
+                              <div class="main-body">
+                                  <div class="page-wrapper">
+                                      <div class="card">
                                           <div class="card-block">
                                               <h4 class="sub-title text-capitalize">Not Girişi</h4>
 
@@ -146,3 +149,9 @@
                                               </div>
                                           </div>
                                       </div>
+                                  </div>
+                              </div>
+                              <div id="styleSelector"></div>
+                          </div>
+
+

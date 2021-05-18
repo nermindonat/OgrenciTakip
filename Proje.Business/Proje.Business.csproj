@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DevamsizlikBilgi.cs" />
     <Compile Include="Kullanicilar.cs" />
     <Compile Include="KullaniciTurleri.cs" />
     <Compile Include="Menuler.cs" />

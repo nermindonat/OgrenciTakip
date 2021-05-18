@@ -35,7 +35,6 @@ namespace Proje.Business
             {
                 entities.OgrBilgi.Add(ogrBilgi);
                 entities.SaveChanges();
-
             }           
         }
 
@@ -45,7 +44,6 @@ namespace Proje.Business
 
             var ogrenci = entities.OgrBilgi.Where(p => p.OgrNo == ogrNo).ToList();
             return ogrenci;
-
         }
 
         public void Guncelle(DataAccess.OgrBilgi ogrBilgi)
@@ -53,13 +51,32 @@ namespace Proje.Business
             Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
 
             var ogrenci = entities.OgrBilgi.FirstOrDefault(p => p.OgrBilgiId == ogrBilgi.OgrBilgiId);
-            ogrenci.OgrAd = ogrBilgi.OgrAd;
+           
             if (ogrenci != null)
             {
-                entities.OgrBilgi.Attach(ogrBilgi);
-                entities.Entry(ogrBilgi).State = EntityState.Modified;
+                ogrenci.FkSinifId = ogrBilgi.FkSinifId;
+                ogrenci.OgrAd = ogrBilgi.OgrAd;
+                ogrenci.OgrSoyad = ogrBilgi.OgrSoyad;
+                ogrenci.OgrNo = ogrBilgi.OgrNo;
+                ogrenci.Adres = ogrBilgi.Adres;
+
+                entities.OgrBilgi.Attach(ogrenci);
+                entities.Entry(ogrenci).State = EntityState.Modified;
                 entities.SaveChanges();
             }
+        }
+
+        public void Sil(int ogrBilgiId)
+        {
+            Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
+           
+            var ogrenci = entities.OgrBilgi.FirstOrDefault(p => p.OgrBilgiId == ogrBilgiId);
+            if(ogrenci != null)
+            {
+                entities.OgrBilgi.Remove(ogrenci);
+                entities.SaveChanges();
+            }
+           
         }
     }
 }

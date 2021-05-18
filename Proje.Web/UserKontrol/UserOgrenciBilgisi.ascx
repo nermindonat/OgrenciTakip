@@ -57,10 +57,8 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Sınıf</label>
                     <div class="col-sm-4">
-
                         <asp:DropDownList runat="server" ID="ddlSinif" CssClass="form-control"></asp:DropDownList>
                         <asp:RequiredFieldValidator runat="server" ID="rfvSinif" CssClass="text-danger font-weight-bold" ControlToValidate="ddlSinif" ErrorMessage="Lütfen öğrenci sınıfını seçiniz." ValidationGroup="OgrenciKaydet"></asp:RequiredFieldValidator>
-
                     </div>
 
                 </div>
@@ -87,4 +85,6 @@
         </div>
     </form>
 </div>
+
+
                                                             
