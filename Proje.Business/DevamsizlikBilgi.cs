@@ -22,11 +22,11 @@ namespace Proje.Business
             return devamBilgileri;
         }
 
-        public List<Proje.DataAccess.DevamsizlikBilgi> OgrenciAra(int ogrenciId)
+        public List<Proje.DataAccess.DevamsizlikBilgi> OgrenciAra(int ogrNo)
         {
             Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
 
-            var ogrenci = entities.DevamsizlikBilgi.Where(p => p.FkOgrBilgiId == ogrenciId).ToList();
+            var ogrenci = entities.DevamsizlikBilgi.Where(p => p.FkOgrBilgiId == ogrNo).ToList();
             return ogrenci;
         }
 
