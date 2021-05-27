@@ -17,7 +17,6 @@ namespace Proje.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Siniflar()
         {
-            this.Kullanicilar = new HashSet<Kullanicilar>();
             this.OgrBilgi = new HashSet<OgrBilgi>();
             this.OgretmenSinif = new HashSet<OgretmenSinif>();
         }
@@ -25,8 +24,6 @@ namespace Proje.DataAccess
         public int SinifId { get; set; }
         public string Sube { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Kullanicilar> Kullanicilar { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OgrBilgi> OgrBilgi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

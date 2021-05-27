@@ -38,8 +38,6 @@
           </Key>
           <Property Name="KulId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FkKulTurId" Type="int" Nullable="false" />
-          <Property Name="FkOgretmenId" Type="int" Nullable="false" />
-          <Property Name="FkSinifId" Type="int" Nullable="false" />
           <Property Name="KulAd" Type="nvarchar" MaxLength="50" />
           <Property Name="KulSoyad" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar(max)" />
@@ -180,18 +178,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Kullanicilar_Siniflar">
-          <End Role="Siniflar" Type="Self.Siniflar" Multiplicity="1" />
-          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Siniflar">
-              <PropertyRef Name="SinifId" />
-            </Principal>
-            <Dependent Role="Kullanicilar">
-              <PropertyRef Name="FkSinifId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Notlar_OgrBilgi">
           <End Role="OgrBilgi" Type="Self.OgrBilgi" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -299,10 +285,6 @@
             <End Role="KullaniciTurleri" EntitySet="KullaniciTurleri" />
             <End Role="Kullanicilar" EntitySet="Kullanicilar" />
           </AssociationSet>
-          <AssociationSet Name="FK_Kullanicilar_Siniflar" Association="Self.FK_Kullanicilar_Siniflar">
-            <End Role="Siniflar" EntitySet="Siniflar" />
-            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
-          </AssociationSet>
           <AssociationSet Name="FK_Notlar_OgrBilgi" Association="Self.FK_Notlar_OgrBilgi">
             <End Role="OgrBilgi" EntitySet="OgrBilgi" />
             <End Role="Notlar" EntitySet="Notlar" />
@@ -372,8 +354,6 @@
           </Key>
           <Property Name="KulId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FkKulTurId" Type="Int32" Nullable="false" />
-          <Property Name="FkOgretmenId" Type="Int32" Nullable="false" />
-          <Property Name="FkSinifId" Type="Int32" Nullable="false" />
           <Property Name="KulAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KulSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -381,7 +361,6 @@
           <Property Name="Fotograf" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Yetki" Type="Int32" Nullable="false" />
           <NavigationProperty Name="KullaniciTurleri" Relationship="Self.FK_Kullanicilar_KullaniciTurleri" FromRole="Kullanicilar" ToRole="KullaniciTurleri" />
-          <NavigationProperty Name="Siniflar" Relationship="Self.FK_Kullanicilar_Siniflar" FromRole="Kullanicilar" ToRole="Siniflar" />
         </EntityType>
         <EntityType Name="KullaniciTurleri">
           <Key>
@@ -466,7 +445,6 @@
           </Key>
           <Property Name="SinifId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Sube" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Kullanicilar" Relationship="Self.FK_Kullanicilar_Siniflar" FromRole="Siniflar" ToRole="Kullanicilar" />
           <NavigationProperty Name="OgrBilgi" Relationship="Self.FK_OgrBilgi_Siniflar" FromRole="Siniflar" ToRole="OgrBilgi" />
           <NavigationProperty Name="OgretmenSinif" Relationship="Self.FK_OgretmenSinif_Siniflar" FromRole="Siniflar" ToRole="OgretmenSinif" />
         </EntityType>
@@ -541,18 +519,6 @@
             </Principal>
             <Dependent Role="Kullanicilar">
               <PropertyRef Name="FkKulTurId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Kullanicilar_Siniflar">
-          <End Role="Siniflar" Type="Self.Siniflar" Multiplicity="1" />
-          <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Siniflar">
-              <PropertyRef Name="SinifId" />
-            </Principal>
-            <Dependent Role="Kullanicilar">
-              <PropertyRef Name="FkSinifId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -655,10 +621,6 @@
             <End Role="KullaniciTurleri" EntitySet="KullaniciTurleri" />
             <End Role="Kullanicilar" EntitySet="Kullanicilar" />
           </AssociationSet>
-          <AssociationSet Name="FK_Kullanicilar_Siniflar" Association="Self.FK_Kullanicilar_Siniflar">
-            <End Role="Siniflar" EntitySet="Siniflar" />
-            <End Role="Kullanicilar" EntitySet="Kullanicilar" />
-          </AssociationSet>
           <AssociationSet Name="FK_Notlar_OgrBilgi" Association="Self.FK_Notlar_OgrBilgi">
             <End Role="OgrBilgi" EntitySet="OgrBilgi" />
             <End Role="Notlar" EntitySet="Notlar" />
@@ -721,8 +683,6 @@
               <MappingFragment StoreEntitySet="Kullanicilar">
                 <ScalarProperty Name="KulId" ColumnName="KulId" />
                 <ScalarProperty Name="FkKulTurId" ColumnName="FkKulTurId" />
-                <ScalarProperty Name="FkOgretmenId" ColumnName="FkOgretmenId" />
-                <ScalarProperty Name="FkSinifId" ColumnName="FkSinifId" />
                 <ScalarProperty Name="KulAd" ColumnName="KulAd" />
                 <ScalarProperty Name="KulSoyad" ColumnName="KulSoyad" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

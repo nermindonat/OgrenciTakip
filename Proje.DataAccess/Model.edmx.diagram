@@ -4,26 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="557dc61375bd49bebf864778db24da42" Name="Diagram1">
-        <EntityTypeShape EntityType="OgrenciTakipModel.Bildirimler" Width="1.5" PointX="7" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.Branslar" Width="1.5" PointX="10.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.DevamsizlikBilgi" Width="1.5" PointX="7.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.Kullanicilar" Width="1.5" PointX="1" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.KullaniciTurleri" Width="1.5" PointX="4.625" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="fc00a5c2b7694afd9c29c6921a047ca9" Name="Diagram1">
+        <EntityTypeShape EntityType="OgrenciTakipModel.Bildirimler" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Branslar" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.DevamsizlikBilgi" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Kullanicilar" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.KullaniciTurleri" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="OgrenciTakipModel.Menuler" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.Notlar" Width="1.5" PointX="9.125" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.OgrBilgi" Width="1.5" PointX="2.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.Ogretmenler" Width="1.5" PointX="5" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.OgretmenSinif" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Notlar" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.OgrBilgi" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Ogretmenler" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.OgretmenSinif" Width="1.5" PointX="9.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="OgrenciTakipModel.OkulBilgi" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OgrenciTakipModel.Siniflar" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OgrenciTakipModel.Siniflar" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Bildirimler_DevamsizlikBilgi" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Bildirimler_Notlar1" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Bildirimler_OgrBilgi" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Ogretmenler_Branslar" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_DevamsizlikBilgi_OgrBilgi" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Kullanicilar_KullaniciTurleri" ManuallyRouted="false" />
-        <AssociationConnector Association="OgrenciTakipModel.FK_Kullanicilar_Siniflar" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Notlar_OgrBilgi" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_Ogretmenler_Notlar" ManuallyRouted="false" />
         <AssociationConnector Association="OgrenciTakipModel.FK_OgrBilgi_Siniflar" ManuallyRouted="false" />

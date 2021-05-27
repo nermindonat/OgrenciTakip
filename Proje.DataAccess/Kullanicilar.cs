@@ -16,8 +16,6 @@ namespace Proje.DataAccess
     {
         public int KulId { get; set; }
         public int FkKulTurId { get; set; }
-        public int FkOgretmenId { get; set; }
-        public int FkSinifId { get; set; }
         public string KulAd { get; set; }
         public string KulSoyad { get; set; }
         public string Email { get; set; }
@@ -26,6 +24,5 @@ namespace Proje.DataAccess
         public int Yetki { get; set; }
     
         public virtual KullaniciTurleri KullaniciTurleri { get; set; }
-        public virtual Siniflar Siniflar { get; set; }
     }
 }
