@@ -3,7 +3,7 @@
 <%@ Register Src="~/UserKontrol/UserOgrenciBilgisi.ascx" TagPrefix="uc1" TagName="UserOgrenciBilgisi" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    title>GURU Able - Free Lite Admin Template </title>
+    <title>GURU Able - Free Lite Admin Template </title>
      <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
     <!-- Required Fremwork -->

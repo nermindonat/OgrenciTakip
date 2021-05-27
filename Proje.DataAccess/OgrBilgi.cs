@@ -17,7 +17,9 @@ namespace Proje.DataAccess
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public OgrBilgi()
         {
+            this.Bildirimler = new HashSet<Bildirimler>();
             this.DevamsizlikBilgi = new HashSet<DevamsizlikBilgi>();
+            this.Notlar = new HashSet<Notlar>();
         }
     
         public int OgrBilgiId { get; set; }
@@ -28,7 +30,11 @@ namespace Proje.DataAccess
         public string Adres { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bildirimler> Bildirimler { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DevamsizlikBilgi> DevamsizlikBilgi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Notlar> Notlar { get; set; }
         public virtual Siniflar Siniflar { get; set; }
     }
 }

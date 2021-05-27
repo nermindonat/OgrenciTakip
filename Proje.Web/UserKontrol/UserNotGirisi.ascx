@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserNotGirisi.ascx.cs" Inherits="Proje.Web.UserKontrol.UserNotGirisi" %>
 
-<div class="pcoded-inner-content">
-                              <div class="main-body">
+
                                   <div class="page-wrapper">
                                       <div class="card">
                                           <div class="card-block">
@@ -84,74 +83,9 @@
                                               </form>
                                           </div>
                                       </div>
-                                      <div class="card" style="padding-bottom: 2%">
-                                          <div class="card-header">
-                                              <h5>Öğrenci Listesi</h5>
-                                              <div class="card-header-right">
-                                                  <ul class="list-unstyled card-option">
-                                                      <li><i class="icofont icofont-simple-left"></i></li>
-                                                      <li>
-                                                          <i class="icofont icofont-maximize full-card"></i>
-                                                      </li>
-                                                      <li>
-                                                          <i class="icofont icofont-minus minimize-card"></i>
-                                                      </li>
-                                                      <li>
-                                                          <i class="icofont icofont-refresh reload-card"></i>
-                                                      </li>
-                                                      <li>
-                                                          <i class="icofont icofont-error close-card"></i>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                          <div class="card-block table-border-style"
-                                               style="padding-left: 5%">
-                                              <div class="table-responsive" style="width: 90%">
-                                                  <table class="table table-hover" id="myTable">
-                                                      <thead>
-                                                          <tr>
-                                                              <th>Numara</th>
-                                                              <th>Ad</th>
-                                                              <th>Soyad</th>
-                                                              <th>Sınıf</th>
-                                                              <th>1. Sınav</th>
-                                                              <th>2. Sınav</th>
-                                                              <th>Performans Notu</th>
-                                                              <th>Proje Notu</th>
-                                                          </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                          <tr>
-                                                              <td>1</td>
-                                                              <td>Şule</td>
-                                                              <td>Atan</td>
-                                                              <td>9/A</td>
-                                                              <td>60</td>
-                                                              <td>70</td>
-                                                              <td>80</td>
-                                                              <td>80</td>
-                                                          </tr>
-                                                          <tr>
-                                                              <td>2</td>
-                                                              <td>Nermin</td>
-                                                              <td>Donat</td>
-                                                              <td>9/B</td>
-                                                              <td>50</td>
-                                                              <td>100</td>
-                                                              <td>70</td>
-                                                              <td>80</td>
-                                                          </tr>
-
-
-                                                      </tbody>
-                                                  </table>
-                                              </div>
-                                          </div>
-                                      </div>
+                                      
                                   </div>
-                              </div>
+                             
                               <div id="styleSelector"></div>
-                          </div>
-
+                         
 

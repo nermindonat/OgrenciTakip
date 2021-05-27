@@ -14,11 +14,19 @@ namespace Proje.DataAccess
     
     public partial class DevamsizlikBilgi
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DevamsizlikBilgi()
+        {
+            this.Bildirimler = new HashSet<Bildirimler>();
+        }
+    
         public int DevamsizlikId { get; set; }
         public int FkOgrBilgiId { get; set; }
         public Nullable<System.DateTime> DevamsizlikTarih { get; set; }
         public string DevamsizlikTur { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bildirimler> Bildirimler { get; set; }
         public virtual OgrBilgi OgrBilgi { get; set; }
     }
 }
