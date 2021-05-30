@@ -74,6 +74,13 @@
                     </div>
 
                 </div>
+                                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Adresi</label>
+                    <div class="col-sm-10">
+                        <textarea runat="server" ID="txtAdres" rows="5" cols="5" class="form-control" placeholder="Default textarea" ></textarea>
+                    </div>
+
+                </div>
                                 <div class="form-group row">
                                   <label class="col-sm-2 col-form-label"
                                     >Devamsızlık Tarihi</label

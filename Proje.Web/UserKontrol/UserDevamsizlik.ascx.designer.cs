@@ -123,6 +123,15 @@ namespace Proje.Web.UserKontrol
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSinif;
 
         /// <summary>
+        /// txtAdres control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtAdres;
+
+        /// <summary>
         /// txtTarih control.
         /// </summary>
         /// <remarks>

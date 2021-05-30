@@ -40,12 +40,13 @@ namespace Proje.Web.UserKontrol
             {
                 foreach (var i in ogrenci)
                 {
-                    txtOgrenciId.Value = i.FkOgrBilgiId.ToString();
+                    txtOgrenciId.Value = i.DevamsizlikId.ToString();
+                    txtOgrenciNo.Value = i.FkOgrBilgiId.ToString();
                     txtTarih.Value = i.DevamsizlikTarih.ToString();
                     selectDevamsizlikTur.Value = i.DevamsizlikTur.ToString();
 
                 }
-
+                    
             }
         }
 
@@ -54,9 +55,10 @@ namespace Proje.Web.UserKontrol
 
             _devamsizlikBilgi.Ekle(new DataAccess.DevamsizlikBilgi()
             {
+                FkOgrBilgiId = int.Parse(txtOgrenciId.Value),
                 DevamsizlikTarih = DateTime.Parse(txtTarih.Value),
                 DevamsizlikTur = selectDevamsizlikTur.Value,
-                FkOgrBilgiId = int.Parse(txtOgrenciId.Value)
+                
             });
   
         }

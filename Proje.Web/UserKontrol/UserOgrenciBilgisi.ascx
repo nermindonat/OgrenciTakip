@@ -15,7 +15,7 @@
                       <asp:RequiredFieldValidator runat="server" ID="rfvOgrenciAra" CssClass="text-danger font-weight-bold" ControlToValidate="txtOgrenciNoAra" ErrorMessage="Lütfen öğrenci numarası giriniz." ValidationGroup="OgrenciAra"></asp:RequiredFieldValidator>
 
                     </div>
-                    <button runat="server" id="btnAra" class="btn btn-danger btn-round col-sm-1" onserverclick="btnAra_ServerClick" validationgroup="OgrenciAra">
+                    <button runat="server" id="btnAra" class="btn btn-success btn-round " style="border-top:thin" onserverclick="btnAra_ServerClick" validationgroup="OgrenciAra">
                         Ara
                     </button>
                 </div>
@@ -65,18 +65,18 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Adresi</label>
                     <div class="col-sm-10">
-                        <textarea runat="server" id="txtAdres" rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
+                        <textarea runat="server" ID="txtAdres" rows="5" cols="5" class="form-control" placeholder="Default textarea" ></textarea>
                     </div>
 
                 </div>
                 <div class="card-block " style="text-align: center;">
-                    <button runat="server" id="btnKaydet" class="btn btn-success btn-round  col-sm-2" onserverclick="btnKaydet_ServerClick" validationgroup="OgrenciKaydet">
+                    <button runat="server" id="btnKaydet" class="btn btn-info btn-round col-sm-2" onserverclick="btnKaydet_ServerClick" validationgroup="OgrenciKaydet">
                         Kaydet
                     </button>
-                    <button runat="server" id="btnGuncelle" class="btn btn-info btn-round  col-sm-2" onserverclick="btnGuncelle_ServerClick" validationgroup="OgrenciKaydet">
+                    <button runat="server" id="btnGuncelle" class="btn btn-warning btn-round col-sm-2" onserverclick="btnGuncelle_ServerClick" validationgroup="OgrenciKaydet">
                         Güncelle
                     </button>
-                    <button runat="server" id="btnSil" class="btn btn-warning btn-round col-sm-2" onserverclick="btnSil_ServerClick" validationgroup="OgrenciKaydet">
+                    <button runat="server" id="btnSil" class="btn btn-danger btn-round col-sm-2" onserverclick="btnSil_ServerClick" validationgroup="OgrenciKaydet">
                         Sil
                     </button>
                 </div>
