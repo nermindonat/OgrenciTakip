@@ -13,12 +13,12 @@ namespace Proje.Business
         public Nullable<System.DateTime> DevamsizlikTarih { get; set; }
         public string DevamsizlikTur { get; set; }
 
-        public List<Proje.DataAccess.DevamsizlikBilgi> DevamsizlikListele()
+        public List<Proje.DataAccess.DevamsizlikBilgi> DevamsizlikListele(int ogrId)
         {
             Proje.DataAccess.OgrenciTakipEntities entities = new Proje.DataAccess.OgrenciTakipEntities();
             Proje.DataAccess.DevamsizlikBilgi devamsizlikBilgi = new Proje.DataAccess.DevamsizlikBilgi();
 
-            var devamBilgileri = entities.DevamsizlikBilgi.ToList();
+            var devamBilgileri = entities.DevamsizlikBilgi.Where(p=>p.FkOgrBilgiId==ogrId).ToList();
             return devamBilgileri;
         }
 
