@@ -56,7 +56,6 @@
     <Compile Include="Branslar.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="DevamsizlikBilgi.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
