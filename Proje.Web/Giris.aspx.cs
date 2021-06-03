@@ -13,14 +13,11 @@ namespace Proje.Web
         Business.KullaniciTurleri _kullaniciTurleri = new Business.KullaniciTurleri();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //KullanicilariListele();
-
+            if (RouteData.Values["kullaniciTurId"] != null)
+            {
+                var kullaniciid = RouteData.Values["kullaniciTurId"];
+            }
         }
-
-        //private void KullanicilariListele()
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         protected void btnGiris_OnServerClick(object sender, EventArgs e)
         {
