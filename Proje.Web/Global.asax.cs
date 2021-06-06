@@ -10,14 +10,14 @@ namespace Proje.Web
 {
     public class Global : System.Web.HttpApplication
     {
-        void RouteYapilandir(RouteCollection route)
-        {
-            route.MapPageRoute("", "Giris/{kullaniciTurId}", "~/Giris.aspx");
-        }
-        protected void Application_Start(object sender, EventArgs e)
-        {
-            RouteYapilandir(RouteTable.Routes);
-        }
+        //void RouteYapilandir(RouteCollection route)
+        //{
+        //    route.MapPageRoute("Giris", "Giris", "~/Giris.aspx");
+        //}
+        //protected void Application_Start(object sender, EventArgs e)
+        //{
+        //    RouteYapilandir(RouteTable.Routes);
+        //}
 
         protected void Session_Start(object sender, EventArgs e)
         {

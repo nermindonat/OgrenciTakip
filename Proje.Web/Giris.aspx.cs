@@ -13,10 +13,10 @@ namespace Proje.Web
         Business.KullaniciTurleri _kullaniciTurleri = new Business.KullaniciTurleri();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (RouteData.Values["kullaniciTurId"] != null)
-            {
-                var kullaniciid = RouteData.Values["kullaniciTurId"];
-            }
+            //if (RouteData.Values["KulTurId"] != null)
+            //{
+            //    var kullaniciid = RouteData.Values["KulTurId"];
+            //}
         }
 
         protected void btnGiris_OnServerClick(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Proje.Web
 
                         Session["KullaniciTurAd"] = _kullaniciTurleri.KullaniciTurAdGetir(kullaniciTurId);
                         
-                        Response.Redirect("Default.aspx");
+                        Response.Redirect("~/Default.aspx");
 
                     }
 
